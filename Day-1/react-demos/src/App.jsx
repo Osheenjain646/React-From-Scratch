@@ -8,6 +8,13 @@
 
 import Greetings from "./components/Greetings"
 import ProductInfo from "./components/ProductInfo"
+import ProductList from "./components/ProductList"
+import UserList from "./components/UserList"
+import User  from "./components/User"
+import userImage from "./assets/7795121.jpg"
+
+
+// const numbers =[1,2,3,4,5,6,7];
 
 const App = () => {
 
@@ -17,11 +24,9 @@ const App = () => {
 
   // const specialClass = "anything-you-want"
 
-  const numbers =[1,2,3,4,5];
-
   return (
     <>
-    <div>
+    {/* <div> */}
       {/* <Header></Header>
       <MainContent></MainContent>
       <Footer></Footer> */}
@@ -35,7 +40,7 @@ const App = () => {
       <p className={specialClass}>This is a special class</p> */}
       {/* <Greetings></Greetings> */}
       {/* <ProductInfo></ProductInfo> */}
-      List Usage in React
+      {/* List Usage in React
       <section>
         {numbers.map((number)=>(
           <ul key={number}>
@@ -44,8 +49,18 @@ const App = () => {
             </li>
           </ul>
         ))}
-      </section>
-    </div>
+      </section> */}
+      {/* <UserList></UserList>
+      <ProductList></ProductList> */}
+      <User
+        img={userImage}
+        name="Osheen Jain"
+        age={20}
+        isMarried={false}
+        hobbies={["coding" , "Singing" , "Listening Music"]}
+      />
+    {/* </div> */}
+
     </>
   )
 }
