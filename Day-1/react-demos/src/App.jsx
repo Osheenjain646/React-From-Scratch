@@ -6,12 +6,16 @@
 // import WelcomeMessage from './components/WelcomeMessage'
 // import JSXRules from './components/JSXRules'
 
-import Greetings from "./components/Greetings"
-import ProductInfo from "./components/ProductInfo"
-import ProductList from "./components/ProductList"
-import UserList from "./components/UserList"
-import User  from "./components/User"
-import userImage from "./assets/7795121.jpg"
+// import Greetings from "./components/Greetings"
+// import ProductInfo from "./components/ProductInfo"
+// import ProductList from "./components/ProductList"
+// import UserList from "./components/UserList"
+// import User  from "./components/User"
+// import userImage from "./assets/7795121.jpg"
+// import Person from "./components/Person"
+import Card from "./components/Card"
+import Password from "./components/Password"
+import Products from "./components/Products"
 
 
 // const numbers =[1,2,3,4,5,6,7];
@@ -52,15 +56,43 @@ const App = () => {
       </section> */}
       {/* <UserList></UserList>
       <ProductList></ProductList> */}
-      <User
+      {/* <User
         img={userImage}
         name="Osheen Jain"
         age={20}
         isMarried={false}
         hobbies={["coding" , "Singing" , "Listening Music"]}
-      />
+      /> */}
+      {/* <Person
+        name="Osheen Jain"
+        age={20}
+      /> */}
+      {/* <Products
+        Product_Name="Laptop"
+        Product_Price={5666}
+      /> */}
+      {/* Using the Children instead */}
+      {/* <Card>
+        <h1>This my card 1</h1>
+        <p>Content of the card 1</p>
+      </Card>
+      <Card>
+        <h1>This my card 2</h1>
+        <p>Content of the card 2</p>
+      </Card>
+      <Card>
+        <h1>This my card 3</h1>
+        <p>Content of the card 3</p>
+      </Card> */}
+      {/* can use multiple times to get the same data */}
+      {/* conditional rendering */}
+      {/* <section>
+        <Password
+          isValid={false}
+        />
+      </section> */}
+      <Cart />
     {/* </div> */}
-
     </>
   )
 }

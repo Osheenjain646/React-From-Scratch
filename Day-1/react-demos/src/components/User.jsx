@@ -1,5 +1,5 @@
 import React from 'react'
-
+// props can be used
 const User = ( {img , name , age , isMarried , hobbies} ) => {
   return (
     <section>
