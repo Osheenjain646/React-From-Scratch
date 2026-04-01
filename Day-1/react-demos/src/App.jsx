@@ -13,9 +13,13 @@
 // import User  from "./components/User"
 // import userImage from "./assets/7795121.jpg"
 // import Person from "./components/Person"
-import Card from "./components/Card"
-import Password from "./components/Password"
-import Products from "./components/Products"
+// import Card from "./components/Card"
+// import Password from "./components/Password"
+// import Products from "./components/Products"
+import Cart from "./components/Cart"
+import Greeting from "./components/Greeting"
+import UserStatus from "./components/UserStatus"
+import Weather from "./components/Weather"
 
 
 // const numbers =[1,2,3,4,5,6,7];
@@ -91,8 +95,18 @@ const App = () => {
           isValid={false}
         />
       </section> */}
-      <Cart />
+      {/* <Cart /> */}
     {/* </div> */}
+    <Weather
+    temperature={26}
+    />
+    <UserStatus
+    loggedIn={false}
+    isAdmin={false}
+    />
+    <Greeting
+    timeOfDay="Afternoon"
+    />
     </>
   )
 }
