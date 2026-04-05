@@ -31,10 +31,7 @@ import StyleCard from "./components/StyleCard"
 
 // const numbers =[1,2,3,4,5,6,7];
 
-const Button = () =>{
-  const handleClick = () => console.log(Math.round(Math.random() * 10))
-  return <button onClick={handleClick} style={{width:"80px" , height:"40px" , fontSize:"10px" , backgroundColor:"red" , color:"lightblue"}}>Random Number</button>
-}
+// Handling Events in React
 
 const App = () => {
 
@@ -119,15 +116,18 @@ const App = () => {
     <Greeting
     timeOfDay="Afternoon"
     /> */}
-    <StyleCard/>
+    {/* <StyleCard/>
     <br></br>
     <ProfileCard/>
     <br></br>
-    <IconComponent/>
+    <IconComponent/> */}
 
-    <div>
-      <Button/>
-    </div>
+    {/* <div>
+      Handle Events in react
+      <Move/>
+    </div> */}
+
+    
     </>
   )
 }
