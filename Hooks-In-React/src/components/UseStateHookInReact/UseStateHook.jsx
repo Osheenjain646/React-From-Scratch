@@ -2,6 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import ComponentOne from './ComponentOne'
 import ComponentTwo from './ComponentTwo'
+import ExampleOne from './ExampleOne'
+import ExampleTwo from './ExampleTwo'
+import ExampleThree from './ExampleThree'
 // use state hook allow us to track state in a functional component.
 // state generally refers to data or properties that need to be tracking in an application.
 // It is used to store and manage data that can change over time, such as user input, API responses, or any other dynamic information. 
@@ -70,9 +73,12 @@ const UseStateHook = () => {
     // This allows multiple components to share and update the same state, ensuring that they stay in sync with each other.
     // Sharing the state between the components
 
-    const [count , setCount] = useState(0);
+    // const [count , setCount] = useState(0);
+
+    // Arrow Function as initial value
     
     
+
     return (
     // with numeric data
     // <div>
@@ -117,16 +123,23 @@ const UseStateHook = () => {
     // </div>
 
     // Sharing the state between components
-    <div>
-        <ComponentOne
-        count={count}
-        OnIncrement = {() => setCount(count + 1)}
-        />
-        <ComponentTwo
-        count={count}
-        OnIncrement = {() => setCount(count + 1)}
-        />
-    </div>
+    // <div>
+    //     <ComponentOne
+    //     count={count}
+    //     OnIncrement = {() => setCount(count + 1)}
+    //     />
+    //     <ComponentTwo
+    //     count={count}
+    //     OnIncrement = {() => setCount(count + 1)}
+    //     />
+    // </div>
+
+    // <ExampleOne></ExampleOne>
+
+      // <ExampleTwo />
+
+      <ExampleThree/>
+
   )
 }
 
