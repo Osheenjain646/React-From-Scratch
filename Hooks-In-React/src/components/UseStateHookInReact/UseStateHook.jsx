@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import ComponentOne from './ComponentOne';
-import ComponentTwo from './ComponentTwo';
+import ComponentOne from './ComponentOne'
+import ComponentTwo from './ComponentTwo'
 // use state hook allow us to track state in a functional component.
 // state generally refers to data or properties that need to be tracking in an application.
 // It is used to store and manage data that can change over time, such as user input, API responses, or any other dynamic information. 
