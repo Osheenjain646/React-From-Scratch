@@ -13,7 +13,6 @@ const App = () => {
     {/* <ExampleTwo></ExampleTwo> */}
     {/* <ExampleThree></ExampleThree> */}
     {/* <Counter></Counter> */}
-    
     </>
   )
 }
