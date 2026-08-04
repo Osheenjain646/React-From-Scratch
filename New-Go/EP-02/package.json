@@ -1,0 +1,24 @@
+{
+  "name": "ep-02",
+  "version": "1.0.0",
+  "description": "This is Ep-02 of react",
+  "license": "ISC",
+  "author": "Osheen Jain",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "vite": "^8.2.0"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "browserslist":[
+    "last 2 version"
+  ]
+}
