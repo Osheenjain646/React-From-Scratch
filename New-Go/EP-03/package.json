@@ -1,0 +1,22 @@
+{
+  "name": "ep-03",
+  "version": "1.0.0",
+  "description": "Ep-03",
+  "license": "ISC",
+  "author": "Osheen Jain",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest",
+    "dev1": "vite",
+    "build": "vite build",
+    "dev2": "parcel index.html"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "vite": "^8.2.1"
+  }
+}
