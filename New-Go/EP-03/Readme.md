@@ -48,3 +48,5 @@ const Heading = () => (
   </div>
 );
 ```
+
+6** Get info about cross side scripting
