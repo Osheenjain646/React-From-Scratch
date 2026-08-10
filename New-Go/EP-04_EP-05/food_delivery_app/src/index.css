@@ -260,14 +260,19 @@ body {
     color: var(--text-muted);
 }
 
-.tag-line {
+.cuisines {
     font-size: 13px;
-    color: #7e808c;
+    color: var(--text-muted);
     line-height: 1.4;
-    font-style: italic;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.area-Name {
+    font-size: 12px;
+    font-weight: 500;
+    color: #93959f;
 }
