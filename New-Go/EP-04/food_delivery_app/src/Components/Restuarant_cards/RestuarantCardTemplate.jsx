@@ -1,6 +1,6 @@
 const RestuarantCardTemplate = (props) => {
     const { resData } = props;
-    const { name, cloudinaryImageId, areaName, costForTwo, cuisines, avgRating } = resData.info;
+    const { name, cloudinaryImageId, areaName, cuisines, avgRating } = resData.info;
     const { slaString } = resData.info.sla;
     return (
         <div className="restuarant-card">
