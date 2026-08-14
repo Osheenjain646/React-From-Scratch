@@ -1,5 +1,5 @@
 import Restuarant_Search from "./SearchBars/Restuarant_Search";
-import { restuarantList } from "./Data/restuarants";
+import { restuarantList } from "../Utils/Data/restuarants";
 import RestuarantCardTemplate from "./Restuarant_cards/RestuarantCardTemplate";
 
 const Body = () => {
