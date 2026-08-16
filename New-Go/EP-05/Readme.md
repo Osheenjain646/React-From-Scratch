@@ -104,6 +104,8 @@ export default Counter;
 
 ### What `useEffect` Does
 
+It is used to do something after the component renders itself on the DOM.Then itt call the callBack function given by us in the useEffect Hook.
+
 `useEffect` lets you perform **side effects**
 in function components — things like data
 fetching, subscriptions, timers, or manually
