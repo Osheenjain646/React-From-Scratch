@@ -12,7 +12,7 @@ const Body = () => {
             const jsonData = await data.json();
             console.log(jsonData);
 
-            setReastuarantData(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restuarants);
+            setReastuarantData(jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
         };
 
         fetchData();
@@ -23,7 +23,7 @@ const Body = () => {
             <Restuarant_Search setReastuarantData={setReastuarantData} />
             <div className="restuarant-cards">
                 {restuarantData.map((restuarant) => (
-                    <RestuarantCardTemplate key={restuarant?.info?.id} resData={restuarant} />
+                    <RestuarantCardTemplate key={restuarant.info.id} resData={restuarant} />
                 ))}
             </div>
         </div>
