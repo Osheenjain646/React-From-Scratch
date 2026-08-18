@@ -94,7 +94,7 @@ body {
     color: var(--nav-hover);
 }
 
-.nav-links-component li:not(:has(.cart-logo))::after {
+.nav-links-component li:not(:has(.cart-logo)):not(:has(.login-btn))::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -105,8 +105,48 @@ body {
     transition: width 0.3s ease;
 }
 
-.nav-links-component li:not(:has(.cart-logo)):hover::after {
+.nav-links-component li:not(:has(.cart-logo)):not(:has(.login-btn)):hover::after {
     width: 100%;
+}
+
+/* Header Login / Logout Button */
+.login-btn {
+    padding: 8px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    color: var(--primary-color);
+    background-color: #ffffff;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(255, 82, 0, 0.12);
+}
+
+.login-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(255, 82, 0, 0.3);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.login-btn.logout {
+    color: #ef4444;
+    border-color: #fca5a5;
+    background-color: #fef2f2;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.12);
+}
+
+.login-btn.logout:hover {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
 }
 
 /* Cart Logo Styling */
@@ -188,9 +228,9 @@ body {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     white-space: nowrap;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -204,6 +244,26 @@ body {
 
 .filter-button:active {
     transform: translateY(0);
+}
+
+/* Filter Active State */
+.filter-button.active {
+    background-color: #ff5200;
+    border-color: #ff5200;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(255, 82, 0, 0.35);
+}
+
+.filter-button.active:hover {
+    background-color: #e04800;
+    border-color: #e04800;
+    color: #ffffff;
+}
+
+.filter-icon {
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .restuarant-cards {
@@ -306,3 +366,53 @@ body {
     font-weight: 500;
     color: #93959f;
 }
+
+/* =========================================
+   Shimmer UI (react-shimmer-effects)
+   ========================================= */
+
+/* Search bar shimmer placeholder */
+.shimmer-search-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+/* Shimmer Grid */
+.shimmer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+/* Shimmer Card */
+.shimmer-card {
+    background-color: var(--card-bg);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+}
+
+.shimmer-card .shimmer-thumbnail {
+    margin-bottom: 0 !important;
+}
+
+.shimmer-info {
+    padding: 16px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.shimmer-rating-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+

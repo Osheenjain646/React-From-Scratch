@@ -1,9 +1,11 @@
 import Restuarant_Search from "./SearchBars/Restuarant_Search";
 import RestuarantCardTemplate from "./Restuarant_cards/RestuarantCardTemplate";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [restuarantData, setReastuarantData] = useState([]);
+    const [filteredRestuarantData, setFilteredRestuarantData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetch(
@@ -12,17 +14,20 @@ const Body = () => {
             const jsonData = await data.json();
             console.log(jsonData);
 
-            setReastuarantData(jsonData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+            setReastuarantData(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredRestuarantData(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         };
 
         fetchData();
     }, []);
 
-    return (
+    // Conditional Rendering
+
+    return restuarantData.length === 0 ? (<Shimmer />) : (
         <div className="body-container">
-            <Restuarant_Search setReastuarantData={setReastuarantData} />
+            <Restuarant_Search restuarantData={restuarantData} filteredRestuarantData={filteredRestuarantData} setFilteredRestuarantData={setFilteredRestuarantData} />
             <div className="restuarant-cards">
-                {restuarantData.map((restuarant) => (
+                {filteredRestuarantData.map((restuarant) => (
                     <RestuarantCardTemplate key={restuarant.info.id} resData={restuarant} />
                 ))}
             </div>
