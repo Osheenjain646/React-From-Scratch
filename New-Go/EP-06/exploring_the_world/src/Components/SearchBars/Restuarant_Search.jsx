@@ -1,9 +1,21 @@
 import { useState } from "react";
 
-const Restuarant_Search = ({ restuarantData, setFilteredRestuarantData, filteredRestuarantData }) => {
+const Restuarant_Search = ({ restuarantData, setFilteredRestuarantData }) => {
 
     const [filterBtn, setFilterBtn] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+
+    const applyFilterAndSearch = (searchQuery, isTopRated) => {
+        const result = restuarantData.filter((res) => {
+            const matchesSearch =
+                searchQuery.toLowerCase().trim() === "" ||
+                res.info.name.toLowerCase().includes(searchQuery.toLowerCase().trim()) ||
+                res.info.cuisines.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase().trim()));
+            const matchesRating = !isTopRated || res.info.avgRating >= 4.5;
+            return matchesSearch && matchesRating;
+        });
+        setFilteredRestuarantData(result);
+    };
 
     return (
         <>
@@ -18,15 +30,7 @@ const Restuarant_Search = ({ restuarantData, setFilteredRestuarantData, filtered
                     }} />
                 <button className="Restuarant-search-button"
                     onClick={() => {
-                        if (searchQuery !== "") {
-                            setFilteredRestuarantData(filteredRestuarantData.filter((res) => {
-                                return res.info.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()) || res.info.cuisines.some((c) => {
-                                    return c.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
-                                })
-                            }))
-                        } else {
-                            setFilteredRestuarantData(restuarantData);
-                        }
+                        applyFilterAndSearch(searchQuery, filterBtn);
                     }}
                 >
                     Search
@@ -34,17 +38,8 @@ const Restuarant_Search = ({ restuarantData, setFilteredRestuarantData, filtered
                 <button
                     className={`filter-button ${filterBtn ? "active" : ""}`}
                     onClick={() => {
-                        if (filterBtn === false) {
-                            setFilteredRestuarantData(filteredRestuarantData.filter((restuarant) => restuarant.info.avgRating >= 4.5));
-                            setFilterBtn(true);
-                        } else {
-                            setFilteredRestuarantData(restuarantData.filter((res) => {
-                                return res.info.name.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase()) || res.info.cuisines.some((c) => {
-                                    return c.toLocaleLowerCase().includes(searchQuery.toLocaleLowerCase())
-                                })
-                            }));
-                            setFilterBtn(false);
-                        }
+                        setFilterBtn(!filterBtn);
+                        applyFilterAndSearch(searchQuery, !filterBtn);
                     }}
                 >
                     <span className="filter-icon">⭐</span>
