@@ -2,6 +2,7 @@ import Restuarant_Search from "./SearchBars/Restuarant_Search";
 import RestuarantCardTemplate from "./Restuarant_cards/RestuarantCardTemplate";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [restuarantData, setReastuarantData] = useState([]);
@@ -23,12 +24,14 @@ const Body = () => {
 
     // Conditional Rendering
 
-    return restuarantData.length === 0 ? (<Shimmer />) : (
+    if (restuarantData.length === 0) return (<Shimmer />)
+
+    return (
         <div className="body-container">
             <Restuarant_Search restuarantData={restuarantData} filteredRestuarantData={filteredRestuarantData} setFilteredRestuarantData={setFilteredRestuarantData} />
             <div className="restuarant-cards">
                 {filteredRestuarantData.map((restuarant) => (
-                    <RestuarantCardTemplate key={restuarant.info.id} resData={restuarant} />
+                    <Link to={"/restuarant/" + restuarant.info.id} key={restuarant.info.id}><RestuarantCardTemplate resData={restuarant} /></Link>
                 ))}
             </div>
         </div>

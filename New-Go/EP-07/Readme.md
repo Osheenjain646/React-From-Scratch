@@ -127,3 +127,5 @@ Server Side Routing is the type of routing where the routing is done on the serv
 Define the route with a colon :. The colon tells React Router that the following segment is a dynamic parameter.
 
 8**To fetch the data from the API using the dynamic parameter id you can use the useParams hook from the react-router-dom and use it in the component that is rendered for that route and use it with the fixed API link and the id to call diffrent API for different data.
+
+9**The key parameter must always be passed at parent component not in nested
