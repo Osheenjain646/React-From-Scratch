@@ -1,0 +1,41 @@
+import Restuarant_Search from "./SearchBars/Restuarant_Search";
+import RestuarantCardTemplate from "./Restuarant_cards/RestuarantCardTemplate";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+
+const Body = () => {
+    const [restuarantData, setReastuarantData] = useState([]);
+    const [filteredRestuarantData, setFilteredRestuarantData] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetch(
+                "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.544004&lng=77.2484095&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            );
+            const jsonData = await data.json();
+            console.log(jsonData);
+
+            setReastuarantData(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFilteredRestuarantData(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        };
+
+        fetchData();
+    }, []);
+
+    // Conditional Rendering
+
+    if (restuarantData.length === 0) return (<Shimmer />)
+
+    return (
+        <div className="body-container">
+            <Restuarant_Search restuarantData={restuarantData} filteredRestuarantData={filteredRestuarantData} setFilteredRestuarantData={setFilteredRestuarantData} />
+            <div className="restuarant-cards">
+                {filteredRestuarantData.map((restuarant) => (
+                    <Link to={"/restuarant/" + restuarant.info.id} key={restuarant.info.id}><RestuarantCardTemplate resData={restuarant} /></Link>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Body;
