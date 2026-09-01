@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # api keys
-/API_KEYS.jsx
+Utils

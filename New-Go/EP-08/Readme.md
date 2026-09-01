@@ -192,3 +192,11 @@ class MyClass extends React.Component{
 }
 
 ```
+
+Do same as in the functional component and fetch the data and set it as using the this.setState and destructure it and show it.
+
+5** when the isntance of the user class is made constructor then render then child in batch then child componentDidMount will make the api call then after fetch is done and data is converted to suitable format then react call the updating cycle and render again and updates the DOM and then call the componentDidUpdate as verification of that the component is updated with the new data that is fetched from the api and also can be used to do the work after the api call is done as you do in the functional component with useEffect.
+
+6** componentWillUnmount is call when that component is gone from the UI or Current DOM that is currently being shown.
+
+7** When you want that useEffect is called when something change in the dependency array 
