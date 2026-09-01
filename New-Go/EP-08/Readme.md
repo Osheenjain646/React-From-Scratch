@@ -199,4 +199,32 @@ Do same as in the functional component and fetch the data and set it as using th
 
 6** componentWillUnmount is call when that component is gone from the UI or Current DOM that is currently being shown.
 
-7** When you want that useEffect is called when something change in the dependency array 
+7** When you want that useEffect is called when something change in the dependency array we just add it to dependency array but to change in class based component we have to do it in the componentDidUpdate using the parameter as the prevProps and prevState and have to check using if else for all changes by checking the current state and the preState of the state variable.
+
+8** If you made for eg a setinterval at componentDidMount and not unmount it in the componentWillUnmount method then the setinterval will keep running in the background even after the component is unmounted and will cause a memory leak and if you switch between the pages it will keep running in background and will cause the system to slow down and it will be a big problem to fix it.
+To prevent this you have to make a way like clearInterval in the componentwillunmount method to stop the setinterval from running in the background as you do in the functional component with useEffect.
+You have to set the setInterval to a variable using this.variable = setInterval() and then use the clearInterval(this.variable) in the componentwillunmount method to stop the setinterval from running in the background.
+
+```js
+componentDidMount() {
+    this.interval = setInterval(() => {
+        console.log("tick");
+    }, 1000);
+}
+componentWillUnmount() {
+    clearInterval(this.interval);
+}
+```
+
+9** In the functional component useEffect for the same (componentWillUnmount) we use return in useEffect as a function that will be called when the component is unmounted and will stop the setinterval from running in the background.
+
+```js
+useEffect(() => {
+    const interval = setInterval(() => {
+        console.log("tick");
+    }, 1000);
+    return () => {
+        clearInterval(interval);
+    };
+}, []);
+```
