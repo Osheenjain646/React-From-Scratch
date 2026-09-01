@@ -1,3 +1,5 @@
+import { API_KEY } from "../../Utils/Keys";
+
 const RestuarantCardTemplate = (props) => {
     const { resData } = props;
     const { name, cloudinaryImageId, areaName, cuisines, avgRating } = resData.info;
@@ -5,7 +7,7 @@ const RestuarantCardTemplate = (props) => {
     return (
         <div className="restuarant-card">
             <div className="dish-image-container">
-                <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} alt="Dish Image" className="dish-img" />
+                <img src={API_KEY + cloudinaryImageId} alt="Dish Image" className="dish-img" />
             </div>
             <div className="card-details-container">
                 <h3 className="restuarant-name">{name}</h3>

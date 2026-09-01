@@ -1,4 +1,5 @@
 import React from "react";
+import { github_User_URL, userName } from "../../Utils/API_KEYS";
 
 class UserClass extends React.Component {
 
@@ -12,8 +13,12 @@ class UserClass extends React.Component {
         }
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         console.log(" Child Component did mount");
+        // api call here 
+        const data = await fetch(github_User_URL + userName);
+        const jsonData = await data.json();
+        console.log(jsonData);
     }
 
     render() {

@@ -2,6 +2,7 @@ import Restuarant_Search from "./SearchBars/Restuarant_Search";
 import RestuarantCardTemplate from "./Restuarant_cards/RestuarantCardTemplate";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { RESTAURANT_DATA_URL } from "../Utils/API_KEYS";
 
 const Body = () => {
     const [restuarantData, setReastuarantData] = useState([]);
@@ -9,7 +10,7 @@ const Body = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetch(
-                "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.544004&lng=77.2484095&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+                RESTAURANT_DATA_URL
             );
             const jsonData = await data.json();
             console.log(jsonData);

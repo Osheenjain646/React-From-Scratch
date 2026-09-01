@@ -140,3 +140,55 @@ Child Component did mount
 Parent Component did mount
 
 3** We use ComponentDidMount function as to do the works that has to be done once the component is mounted or rendered successfully on the DOM. As use of this we can make api calls inside it as it is call after the first render of the component.(The MicroService Architecture is a type of architecture that is used to build software applications in the form of a collection of small, independent services that can be deployed and scaled independently)
+
+4** When two class based components are rendered in the app at the same time like
+
+```js
+
+<UserClass />
+<UserClass />
+
+```
+
+then the order will be:-
+
+Parent Constructor
+Parent render
+Child1 Constructor
+Child1 render
+Child2 Constructor
+Child2 render
+
+Dom updates here in a single batch
+
+Child1 ComponentDidMount
+Child2 ComponentDidMount
+Parent ComponentDidMount
+
+this is happening because react making batches of the two class based components and rendering them at the same time and it is optimizing it.
+
+this is happening because of the two phase of the react lifecycle diagram (Rendering Phase and Commit Phase)
+
+![alt text](image-1.png)
+
+React is doing it as render phase is not costly and it is fast , it can be done multiple times but the commit phase takes costly and can be done only once so, react make batches of these components and render them at same time and commit them at once.
+
+## API call in Class Based Component
+
+```js
+
+// 1** API call should be inside ComponentDidMount
+
+class MyClass extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
+    // make the componentDidMount as async itself and using await we can wait for the api call to complete
+
+    componentDidMount(){
+        // API call
+    }
+}
+
+```
