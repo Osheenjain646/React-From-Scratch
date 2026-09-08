@@ -24,7 +24,7 @@ So in browserRouter we use Suspense (likely a component) and grocery component i
 
 *** We do this especially when we our app is Bloating means the bundle size is increasing.
 
-4** New thing learned as main.jsx in vite app is only used for mounting the createRoot.So make the route config in Your app.jsx file for not recieving the fast refresh errors by eslint.
+4** New thing learned as main.jsx in vite app is only used for mounting the createRoot.So make the route config in a separate file and import it in main.jsx file.
 
 ## gpt chat
 
