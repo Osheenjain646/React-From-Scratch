@@ -5,18 +5,18 @@ const RestuarantCardTemplate = (props) => {
     const { name, cloudinaryImageId, areaName, cuisines, avgRating } = resData.info;
     const { slaString } = resData.info.sla;
     return (
-        <div className="restuarant-card">
-            <div className="dish-image-container">
-                <img src={IMAGE_URL + cloudinaryImageId} alt="Dish Image" className="dish-img" />
+        <div className=" flex flex-col p-4 m-4 w-auto h-auto bg-slate-50 shadow-lg shadow-gray-300 rounded-xl hover:transition-all hover:scale-105 hover:duration-300 overflow-hidden">
+            <div className="w-auto h-60 overflow-hidden rounded-lg">
+                <img src={IMAGE_URL + cloudinaryImageId} alt="Dish Image" className="w-full h-full object-cover transition-all duration-300" />
             </div>
-            <div className="card-details-container">
-                <h3 className="restuarant-name">{name}</h3>
-                <div className="rating-distance-container">
-                    <span className="rating">⭐ {avgRating}</span>
-                    <span className="distance">{slaString}</span>
+            <div className="px-4 py-5 flex flex-col flex-nowrap gap-2">
+                <h3 className="font-bold text-xl font-Poppins overflow-hidden">{name}</h3>
+                <div className="mt-0.5 flex justify-between items-center">
+                    <span className="font-bold">⭐ {avgRating}</span>
+                    <span className="font-bold">{slaString}</span>
                 </div>
-                <p className="cuisines">{cuisines.join(", ")}</p>
-                <p className="area-Name">{areaName}</p>
+                <p className="font-medium truncate">{cuisines.join(", ")}</p>
+                <p className="text-gray-500 mt-1 text-lg truncate">{areaName}</p>
             </div>
         </div>
     );

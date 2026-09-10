@@ -25,7 +25,7 @@ const Body = () => {
     return (
         <div className="body-container">
             <Restuarant_Search restuarantData={restuarantData} setFilteredRestuarantData={setFilteredRestuarantData} />
-            <div className="restuarant-cards">
+            <div className="grid grid-cols-4">
                 {filteredRestuarantData.map((restuarant) => (
                     <Link to={"/restuarant/" + restuarant.info.id} key={restuarant.info.id}><RestuarantCardTemplate resData={restuarant} /></Link>
                 ))}
