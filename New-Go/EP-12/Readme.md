@@ -8,7 +8,7 @@
 - Redux is not mandatory it is application based like for large apps.
 
 Q- Are Redux and React are the same??
-Answer:- Yes. React and Redux are different libraries, but they are commonly used together.
+Answer:- No. React and Redux are different libraries, but they are commonly used together.
 
 React
 
