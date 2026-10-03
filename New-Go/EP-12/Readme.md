@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD046 -->
+
 # EP-12 Notes
 
 ## Learning about redux store (the data store) using the redux toolkit
