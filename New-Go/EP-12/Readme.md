@@ -8,7 +8,7 @@
 - Redux is not mandatory it is application based like for large apps.
 
 Q- Are Redux and React are the same??
-Answer:- Yes. React and Redux are different libraries, but they are commonly used together.
+Answer:- No. React and Redux are different libraries, but they are commonly used together.
 
 React
 
@@ -1026,4 +1026,4 @@ of the slice of the store and they are the main reducers which are responsible f
 
 Both approaches are acceptable in Redux Toolkit because Immer handles the heavy lifting of creating new immutable versions behind the scenes.
 
--
+- Read About the RTK Query and lern about api calls.
