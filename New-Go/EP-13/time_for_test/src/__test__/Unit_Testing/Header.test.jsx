@@ -3,6 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import ReduxStore from "../../Utils/ReduxStore";
 import Header from "../../Components/Header";
+import { it, expect } from "vitest";
+
 
 it("Should load header component with a login button", () => {
     render(

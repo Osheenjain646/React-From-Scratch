@@ -2,7 +2,7 @@ import RestuarantCardTemplate from "../../Components/Restuarant_cards/Restuarant
 import { render, screen } from "@testing-library/react";
 import MOCK_DATA from "../../Utils/Test_Mock_Data/RestuarantMOCK_DATA.json";
 import PromotedRestuarantCardTemplate from "../../Components/Restuarant_cards/PromotedRestaurantCardTemplate";
-
+import { it, expect } from "vitest"
 
 it("should render the restuarant card component with props data", () => {
     render(<RestuarantCardTemplate resData={MOCK_DATA}></RestuarantCardTemplate>);
